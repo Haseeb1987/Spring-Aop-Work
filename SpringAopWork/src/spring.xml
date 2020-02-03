@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xmlns:aop="http://www.springframework.org/schema/aop"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+    http://www.springframework.org/schema/aop   
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">  
+    
+    <aop:aspectj-autoproxy/>
+    
+    <bean name="student" class="com.spring.aop.dto.Student">
+    	<property name="name" value="Student is here !!!"></property>
+    </bean>
+    
+    <bean name="teacher" class="com.spring.aop.dto.Teacher">
+    	<property name="name" value="Techer is here !!!"></property>
+    </bean>
+
+	<bean name="service" class="com.spring.aop.services.AopService" autowire="byName"> </bean>
+
+	<context:component-scan base-package="com.spring.aop"/>	
+
+</beans>
+    
